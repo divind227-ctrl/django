@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Departments</title>
+    <style>
+        /* --------- Base Styles --------- */
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 60px;
+            font-size: 2.5rem;
+            color: white;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --------- Button Style --------- */
+        form button {
+            background-color: white;
+            color: #2575fc;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin: 20px 0 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        form button:hover {
+            background-color: #2575fc;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        /* --------- List Style --------- */
+        ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            width: 90%;
+            margin-bottom: 60px;
+        }
+
+        li {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #ffffff, #f0f8ff);
+        }
+
+        /* --------- Responsive --------- */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; margin-top: 40px; }
+            form button { padding: 10px 18px; font-size: 0.9rem; }
+            li { font-size: 1rem; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Departments</h1>
+    <form action="/mark/course/dep/building/">
+        <button type="submit">Go to Department</button>
+    </form>
+    <ul>
+        {% for dep in departments %}
+        <li>{{ dep }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
